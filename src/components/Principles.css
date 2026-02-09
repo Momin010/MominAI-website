@@ -1,0 +1,55 @@
+.principles-section {
+    padding: 80px 20px;
+    /* Add horizontal padding */
+    display: flex;
+    justify-content: center;
+}
+
+.principles-visual-wrapper {
+    width: 100%;
+    max-width: 900px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.principles-panel {
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+.principles-main-img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    /* Force containment */
+    display: block;
+    border-radius: 12px;
+    object-fit: contain;
+    /* Ensure full image is visible */
+}
+
+.visual-glow-small {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15), transparent 70%);
+    filter: blur(50px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .principles-section {
+        padding: 40px 20px;
+    }
+
+    .principles-panel {
+        padding: 10px;
+        border-radius: 16px;
+    }
+}

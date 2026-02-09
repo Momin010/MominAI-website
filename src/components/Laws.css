@@ -1,0 +1,69 @@
+.laws-section {
+    padding-bottom: 0;
+}
+
+.laws-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.law-card {
+    padding: 32px;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.law-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+}
+
+.law-number {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    pointer-events: none;
+}
+
+.laws-content-wrapper {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .laws-content-wrapper {
+        flex-direction: column-reverse;
+    }
+
+    .laws-visual {
+        display: block;
+        /* Show visual on tablet/mobile but stacked */
+        width: 100%;
+        height: 300px;
+        flex: none;
+    }
+}
+
+.law-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.law-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.law-card:hover h3 {
+    color: var(--accent-blue);
+}
