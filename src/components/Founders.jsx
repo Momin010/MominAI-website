@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Linkedin, Github, Globe, Award, Briefcase, Building } from 'lucide-react';
-import mominImg from '../assets/me1.jpg';
+import mominImg from '../assets/me.png';
 import wasayImg from '../assets/wasay2.jpg';
 import './Founders.css';
 
