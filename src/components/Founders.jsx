@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Github, Globe, Award, Briefcase, GraduationCap, Building } from 'lucide-react';
-import mominImg from '../assets/me.png';
-import wasayImg from '../assets/wasay.JPG';
+import { Linkedin, Github, Globe, Award, Briefcase, Building } from 'lucide-react';
+import mominImg from '../assets/me1.jpg';
+import wasayImg from '../assets/wasay2.jpg';
 import './Founders.css';
 
 const Founders = () => {
@@ -10,8 +10,6 @@ const Founders = () => {
             name: "Momin Aldahdooh",
             role: "Founder & CEO",
             location: "Tampere, Finland",
-            age: 15,
-            equity: "60%",
             isTechnical: true,
             bio: "Young entrepreneur who secured internships at the Finnish Parliament and Mayor's Office through strategic outreach. Founded a registered company at 14, achieving 4-figure revenue and government funding.",
             image: mominImg,
@@ -30,33 +28,21 @@ const Founders = () => {
                 { name: "EventConnect", url: "https://childevent-official.vercel.app", desc: "Full-stack social app for kids" },
                 { name: "MominOS", url: "https://github.com/Momin010/MominOS", desc: "Experimental OS kernel" },
                 { name: "CustomHydration", url: "https://customhydration.netlify.app/", desc: "E-commerce platform" }
-            ]
+            ],
+            hasFullInfo: true
         },
         {
             name: "Abdul Wasay Muhammad",
             role: "Co-Founder",
             location: "Rauma, Finland",
-            age: 16,
-            equity: "40%",
             isTechnical: false,
-            bio: "Head of Content at Since AI, leading content strategy for AI community initiatives. Experienced in building and operating multiple digital ventures including Shopify stores and social media management.",
             image: wasayImg,
             links: {
                 linkedin: "https://www.linkedin.com/in/abdulwasaymuhammad/",
                 github: "https://github.com/AWM909",
                 website: null
             },
-            accomplishments: [
-                "Head of Content at Since AI",
-                "Led hackathon hosting and front-stage operations",
-                "Built 6-8 Shopify stores across niches",
-                "Bronze medal in Kangaroo Math Contest"
-            ],
-            projects: [
-                { name: "Since AI", url: null, desc: "AI community & hackathon organization" },
-                { name: "TurboTales Media", url: "https://www.tiktok.com/@turbotales.media", desc: "Car niche TikTok page" },
-                { name: "Multiple Shopify Stores", url: null, desc: "E-commerce ventures" }
-            ]
+            hasFullInfo: false
         }
     ];
 
@@ -80,7 +66,7 @@ const Founders = () => {
                     {founders.map((founder, index) => (
                         <motion.div
                             key={index}
-                            className="founder-card glass"
+                            className={`founder-card glass ${!founder.hasFullInfo ? 'minimal' : ''}`}
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -105,73 +91,95 @@ const Founders = () => {
                                             <Building size={14} />
                                             {founder.location}
                                         </span>
-                                        <span className="meta-item equity">
-                                            {founder.equity} Equity
-                                        </span>
                                     </div>
                                 </div>
                             </div>
 
-                            <p className="founder-bio">{founder.bio}</p>
+                            {founder.hasFullInfo && (
+                                <>
+                                    <p className="founder-bio">{founder.bio}</p>
 
-                            <div className="founder-links">
-                                {founder.links.linkedin && (
-                                    <a href={founder.links.linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
-                                        <Linkedin size={18} />
-                                    </a>
-                                )}
-                                {founder.links.github && (
-                                    <a href={founder.links.github} target="_blank" rel="noopener noreferrer" className="social-link">
-                                        <Github size={18} />
-                                    </a>
-                                )}
-                                {founder.links.website && (
-                                    <a href={founder.links.website} target="_blank" rel="noopener noreferrer" className="social-link">
-                                        <Globe size={18} />
-                                    </a>
-                                )}
-                            </div>
+                                    <div className="founder-links">
+                                        {founder.links.linkedin && (
+                                            <a href={founder.links.linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
+                                                <Linkedin size={18} />
+                                            </a>
+                                        )}
+                                        {founder.links.github && (
+                                            <a href={founder.links.github} target="_blank" rel="noopener noreferrer" className="social-link">
+                                                <Github size={18} />
+                                            </a>
+                                        )}
+                                        {founder.links.website && (
+                                            <a href={founder.links.website} target="_blank" rel="noopener noreferrer" className="social-link">
+                                                <Globe size={18} />
+                                            </a>
+                                        )}
+                                    </div>
 
-                            <div className="founder-section">
-                                <h4 className="subsection-title">
-                                    <Award size={16} />
-                                    Key Accomplishments
-                                </h4>
-                                <ul className="accomplishments-list">
-                                    {founder.accomplishments.map((acc, i) => (
-                                        <li key={i}>{acc}</li>
-                                    ))}
-                                </ul>
-                            </div>
+                                    <div className="founder-section">
+                                        <h4 className="subsection-title">
+                                            <Award size={16} />
+                                            Key Accomplishments
+                                        </h4>
+                                        <ul className="accomplishments-list">
+                                            {founder.accomplishments.map((acc, i) => (
+                                                <li key={i}>{acc}</li>
+                                            ))}
+                                        </ul>
+                                    </div>
 
-                            <div className="founder-section">
-                                <h4 className="subsection-title">
-                                    <Briefcase size={16} />
-                                    Notable Projects
-                                </h4>
-                                <div className="projects-list">
-                                    {founder.projects.map((project, i) => (
-                                        <div key={i} className="project-item">
-                                            {project.url ? (
-                                                <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-link">
-                                                    {project.name}
-                                                </a>
-                                            ) : (
-                                                <span className="project-name">{project.name}</span>
-                                            )}
-                                            <span className="project-desc">{project.desc}</span>
+                                    <div className="founder-section">
+                                        <h4 className="subsection-title">
+                                            <Briefcase size={16} />
+                                            Notable Projects
+                                        </h4>
+                                        <div className="projects-list">
+                                            {founder.projects.map((project, i) => (
+                                                <div key={i} className="project-item">
+                                                    {project.url ? (
+                                                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-link">
+                                                            {project.name}
+                                                        </a>
+                                                    ) : (
+                                                        <span className="project-name">{project.name}</span>
+                                                    )}
+                                                    <span className="project-desc">{project.desc}</span>
+                                                </div>
+                                            ))}
                                         </div>
-                                    ))}
-                                </div>
-                            </div>
+                                    </div>
 
-                            <div className="founder-badge">
-                                {founder.isTechnical ? (
-                                    <span className="badge technical">Technical Founder</span>
-                                ) : (
-                                    <span className="badge business">Business & Growth</span>
-                                )}
-                            </div>
+                                    <div className="founder-badge">
+                                        {founder.isTechnical ? (
+                                            <span className="badge technical">Technical Founder</span>
+                                        ) : (
+                                            <span className="badge business">Business & Growth</span>
+                                        )}
+                                    </div>
+                                </>
+                            )}
+
+                            {!founder.hasFullInfo && (
+                                <>
+                                    <div className="founder-links minimal-links">
+                                        {founder.links.linkedin && (
+                                            <a href={founder.links.linkedin} target="_blank" rel="noopener noreferrer" className="social-link">
+                                                <Linkedin size={18} />
+                                            </a>
+                                        )}
+                                        {founder.links.github && (
+                                            <a href={founder.links.github} target="_blank" rel="noopener noreferrer" className="social-link">
+                                                <Github size={18} />
+                                            </a>
+                                        )}
+                                    </div>
+
+                                    <div className="founder-badge">
+                                        <span className="badge business">Business & Growth</span>
+                                    </div>
+                                </>
+                            )}
                         </motion.div>
                     ))}
                 </div>

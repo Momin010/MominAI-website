@@ -302,6 +302,27 @@
     border: 1px solid rgba(255, 77, 140, 0.3);
 }
 
+/* Minimal card styles for founders without full info */
+.founder-card.minimal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.founder-card.minimal .founder-header {
+    margin-bottom: auto;
+}
+
+.minimal-links {
+    justify-content: center;
+    margin-top: auto;
+}
+
+.founder-card.minimal .founder-badge {
+    margin-top: 0;
+    text-align: center;
+}
+
 .founders-cta {
     margin-top: 60px;
     display: flex;
