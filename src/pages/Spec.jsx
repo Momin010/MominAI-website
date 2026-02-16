@@ -21,16 +21,16 @@ const Mermaid = ({ chart }) => {
 };
 
 const specContent = `
-# MominAI – Agent-Native Execution Environment
+# MowisAI – Agent-Native Execution Environment
 
 ### Foundational Design Document (v0.1)
 
 ## 1. Executive Summary
 
-MominAI is a proposed **agent-native execution substrate**: a system-level runtime designed to safely host autonomous AI agents in isolated environments.
+MowisAI is a proposed **agent-native execution substrate**: a system-level runtime designed to safely host autonomous AI agents in isolated environments.
 
 ## 2. Core Problem
-Current agent systems run directly on the host OS, creating massive security gaps. MominAI introduces a **new execution layer** that formalizes agent governance.
+Current agent systems run directly on the host OS, creating massive security gaps. MowisAI introduces a **new execution layer** that formalizes agent governance.
 
 ## 3. Conceptual Model
 
@@ -50,9 +50,9 @@ graph TD
     B -- Intentions --> C
     C -- Observations --> B
     C --> D[Sandbox Environment]
-    style A fill:#1a1a1a,stroke:#3b82f6,stroke-width:2px
-    style B fill:#1a1a1a,stroke:#ff4d8c,stroke-width:2px
-    style C fill:#1a1a1a,stroke:#3b82f6,stroke-width:2px
+    style A fill:#1a1a1a,stroke:#00d1c1,stroke-width:2px
+    style B fill:#1a1a1a,stroke:#fffdf0,stroke-width:2px
+    style C fill:#1a1a1a,stroke:#00d1c1,stroke-width:2px
 \`\`\`
 
 ## 4. Sandbox Model
@@ -77,7 +77,7 @@ graph LR
         Sandbox -.->|Mediated Access| OS
         Sandbox -.->|Firewalled| Net
     end
-    style Sandbox fill:#0a0a0a,stroke:#ff4d8c,stroke-width:2px,stroke-dasharray: 5 5
+    style Sandbox fill:#0a0a0a,stroke:#fffdf0,stroke-width:2px,stroke-dasharray: 5 5
 \`\`\`
 
 ## 10. System Laws (Governance Model)

@@ -77,7 +77,7 @@ const Hero = () => {
                     animate={{ opacity: 1, scale: 1, rotate: 0 }}
                     transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
                 >
-                    <img src={heroAbstract} alt="MominAI Abstract" className="hero-abstract-img" />
+                    <img src={heroAbstract} alt="MowisAI Abstract" className="hero-abstract-img" />
                     <div className="visual-glow"></div>
                 </motion.div>
             </div>

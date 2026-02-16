@@ -33,7 +33,7 @@ const Navbar = () => {
         >
             <div className="container nav-container">
                 <Link to="/" className="logo" onClick={closeMenu}>
-                    <img src={logo} alt="MominAI Logo" className="logo-image" />
+                    <img src={logo} alt="MowisAI Logo" className="logo-image" />
                 </Link>
 
                 {/* Desktop Links */}

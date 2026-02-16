@@ -58,13 +58,13 @@
 }
 
 .brain:hover {
-    border-color: rgba(255, 77, 140, 0.3);
-    box-shadow: 0 10px 40px -10px rgba(255, 77, 140, 0.2);
+    border-color: rgba(255, 253, 240, 0.3);
+    box-shadow: 0 10px 40px -10px rgba(255, 253, 240, 0.2);
 }
 
 .hands:hover {
-    border-color: rgba(59, 130, 246, 0.3);
-    box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.2);
+    border-color: rgba(0, 209, 193, 0.3);
+    box-shadow: 0 10px 40px -10px rgba(0, 209, 193, 0.2);
 }
 
 .icon-wrapper {
@@ -79,13 +79,13 @@
 }
 
 .brain-glow {
-    color: var(--accent-blush);
-    box-shadow: 0 0 30px var(--accent-blush-dim);
+    color: var(--accent-cream);
+    box-shadow: 0 0 30px var(--accent-cream-dim);
 }
 
 .hands-glow {
-    color: var(--accent-blue);
-    box-shadow: 0 0 30px var(--accent-blue-dim);
+    color: var(--accent-teal);
+    box-shadow: 0 0 30px var(--accent-teal-dim);
 }
 
 .component-card h3 {
@@ -130,7 +130,7 @@
 
 .mediated-badge {
     background: rgba(59, 130, 246, 0.1);
-    color: var(--accent-blue);
+    color: var(--accent-teal);
 }
 
 .connection-line {

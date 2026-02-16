@@ -8,13 +8,13 @@ const Footer = () => {
             <div className="container footer-container">
                 <div className="footer-brand">
                     <div className="logo">
-                        <img src={logo} alt="MominAI Logo" className="logo-image small" />
+                        <img src={logo} alt="MowisAI Logo" className="logo-image small" />
                     </div>
                     <p className="footer-desc">
                         The agent-native execution substrate. Built for the next generation of autonomous systems.
                     </p>
                     <div className="copyright">
-                        © {new Date().getFullYear()} MominAI Inc. All rights reserved.
+                        © {new Date().getFullYear()} MowisAI Inc. All rights reserved.
                     </div>
                 </div>
 

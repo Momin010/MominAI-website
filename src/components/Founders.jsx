@@ -36,7 +36,7 @@ const Founders = () => {
             role: "Co-Founder",
             location: "Rauma, Finland",
             isTechnical: false,
-            bio: "AI entrepreneur and co-founder of MominAI, working across AI, content, and marketing. Currently training as a software developer in school, expanding into product and technical development. Experienced in startup marketing, content strategy, and execution for AI-focused brands.",
+            bio: "AI entrepreneur and co-founder of MowisAI, working across AI, content, and marketing. Currently training as a software developer in school, expanding into product and technical development. Experienced in startup marketing, content strategy, and execution for AI-focused brands.",
             image: wasayImg,
             links: {
                 linkedin: "https://www.linkedin.com/in/abdulwasaymuhammad/",
@@ -48,11 +48,11 @@ const Founders = () => {
                 "Worked across social media, design, and video for digital brands",
                 "Content & Marketing Lead at Since AI",
                 "Internship at Boost Turku",
-                "Co-founder of AI startups including MominAI"
+                "Co-founder of AI startups including MowisAI"
             ],
             projects: [
                 { name: "Content & Marketing Lead", desc: "AI-focused projects" },
-                { name: "Startup Co-Founder", desc: "MominAI and other AI ventures" },
+                { name: "Startup Co-Founder", desc: "MowisAI and other AI ventures" },
                 { name: "Hackathon Host", desc: "Community building events" },
                 { name: "Marketing Strategist", desc: "AI-focused projects" }
             ],

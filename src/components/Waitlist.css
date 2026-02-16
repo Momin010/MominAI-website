@@ -54,7 +54,7 @@
 }
 
 .input-group:focus-within {
-    border-color: var(--accent-blue);
+    border-color: var(--accent-teal);
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
 }
@@ -126,7 +126,7 @@
 .decor-1 {
     width: 300px;
     height: 300px;
-    background: var(--accent-blue);
+    background: var(--accent-teal);
     opacity: 0.1;
     top: -150px;
     right: -50px;
@@ -135,7 +135,7 @@
 .decor-2 {
     width: 250px;
     height: 250px;
-    background: var(--accent-blush);
+    background: var(--accent-cream);
     opacity: 0.1;
     bottom: -100px;
     left: -50px;

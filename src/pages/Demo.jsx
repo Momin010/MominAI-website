@@ -20,7 +20,7 @@ const Demo = () => {
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
                     <h1 className="demo-title">
-                        <span className="text-gradient">MominAI Demo</span>
+                        <span className="text-gradient">MowisAI Demo</span>
                     </h1>
                     <p className="demo-subtitle">
                         See our agent-native execution substrate in action

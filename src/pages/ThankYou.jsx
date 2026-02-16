@@ -9,7 +9,7 @@ const ThankYou = () => {
 
     React.useEffect(() => {
         // Set flag so waitlist stays hidden on Home page
-        localStorage.setItem('mominai_waitlist_joined', 'true');
+        localStorage.setItem('MowisAI_waitlist_joined', 'true');
     }, []);
 
     return (
@@ -34,7 +34,7 @@ const ThankYou = () => {
 
                 <h1 className="thank-you-title">You're on the <span className="text-gradient">List!</span></h1>
                 <p className="thank-you-text">
-                    Thank you for joining the MominAI waitlist. We've sent a confirmation email to your inbox.
+                    Thank you for joining the MowisAI waitlist. We've sent a confirmation email to your inbox.
                     Stay tuned for early access and exclusive updates.
                 </p>
 

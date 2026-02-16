@@ -24,7 +24,7 @@ const Laws = () => {
                 >
                     <h2 className="section-title">Constitutional Laws</h2>
                     <p className="section-subtitle">
-                        The immutable principles that govern every agent instance within the MominAI substrate.
+                        The immutable principles that govern every agent instance within the MowisAI substrate.
                     </p>
                 </motion.div>
 

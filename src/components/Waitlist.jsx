@@ -15,14 +15,14 @@ const Waitlist = () => {
 
     useEffect(() => {
         // Check if user has already joined in this session/browser
-        const hasJoined = localStorage.getItem('mominai_waitlist_joined');
+        const hasJoined = localStorage.getItem('MowisAI_waitlist_joined');
         if (hasJoined) {
             setIsJoined(true);
         }
     }, []);
 
     const handleSuccess = () => {
-        localStorage.setItem('mominai_waitlist_joined', 'true');
+        localStorage.setItem('MowisAI_waitlist_joined', 'true');
         setIsJoined(true);
         navigate('/thank-you');
     };

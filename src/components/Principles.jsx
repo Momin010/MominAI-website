@@ -14,7 +14,7 @@ const Principles = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <div className="glass-panel principles-panel">
-                        <img src={principlesImg} alt="MominAI Principles" className="principles-main-img" />
+                        <img src={principlesImg} alt="MowisAI Principles" className="principles-main-img" />
                         <div className="visual-glow-small"></div>
                     </div>
                 </motion.div>

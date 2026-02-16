@@ -3,20 +3,22 @@
 :root {
   /* Premium Dark Palette */
   --bg-dark: #050507;
-  --bg-card: rgba(18, 18, 23, 0.7);
-  --text-primary: #F2F2F4;
+  --bg-card: rgba(12, 12, 15, 0.7);
+  --text-primary: #fcfcfc;
+  /* Pearl White */
   --text-secondary: #A1A1AA;
   --text-tertiary: #52525B;
 
-  /* Accents - Blush & Blue */
-  --accent-blush: #FF4D8C;
-  --accent-blush-dim: rgba(255, 77, 140, 0.15);
-  --accent-blue: #3B82F6;
-  --accent-blue-dim: rgba(59, 130, 246, 0.15);
+  /* Accents - Teal, Pearl & Cream */
+  --accent-teal: #00d1c1;
+  --accent-teal-dim: rgba(0, 209, 193, 0.15);
+  --accent-pearl: #fcfcfc;
+  --accent-cream: #fffdf0;
+  --accent-cream-dim: rgba(255, 253, 240, 0.15);
 
   /* Gradients */
-  --gradient-main: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-blush) 100%);
-  --gradient-glow: radial-gradient(circle at 50% 50%, var(--accent-blue-dim), transparent 70%);
+  --gradient-main: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-cream) 100%);
+  --gradient-glow: radial-gradient(circle at 50% 50%, var(--accent-teal-dim), transparent 70%);
 
   /* Spacing */
   --nav-height: 80px;

@@ -54,7 +54,7 @@
 }
 
 .link-group a:hover {
-    color: var(--accent-blue);
+    color: var(--accent-teal);
 }
 
 @media (max-width: 768px) {

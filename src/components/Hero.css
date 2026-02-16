@@ -29,7 +29,7 @@
 .orb-1 {
     width: 600px;
     height: 600px;
-    background: var(--accent-blue-dim);
+    background: var(--accent-teal-dim);
     top: -100px;
     left: -100px;
     animation-delay: 0s;
@@ -38,7 +38,7 @@
 .orb-2 {
     width: 500px;
     height: 500px;
-    background: var(--accent-blush-dim);
+    background: var(--accent-cream-dim);
     bottom: 0;
     right: -100px;
     animation-delay: -5s;
@@ -71,7 +71,7 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 99px;
     font-size: 0.85rem;
-    color: var(--accent-blue);
+    color: var(--accent-teal);
     font-weight: 500;
     backdrop-filter: blur(8px);
 }
@@ -80,7 +80,7 @@
     margin-bottom: 24px;
     line-height: 1.1;
     letter-spacing: -0.04em;
-    background: linear-gradient(to bottom right, #fff, #999);
+    background: linear-gradient(to bottom right, var(--accent-pearl), var(--text-secondary));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;

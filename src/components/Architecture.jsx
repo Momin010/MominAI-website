@@ -29,7 +29,7 @@ const Architecture = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <div className="glass-panel diagram-panel">
-                            <img src={archDiagram} alt="MominAI Architecture Diagram" className="arch-diagram-img" />
+                            <img src={archDiagram} alt="MowisAI Architecture Diagram" className="arch-diagram-img" />
                             <div className="diagram-overlay"></div>
                         </div>
                     </motion.div>

@@ -32,7 +32,7 @@
     align-items: center;
     justify-content: center;
     margin: 0 auto 32px;
-    box-shadow: 0 0 30px var(--accent-blue-dim);
+    box-shadow: 0 0 30px var(--accent-teal-dim);
     color: white;
 }
 

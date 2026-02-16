@@ -52,7 +52,7 @@ const Problem = () => {
                         </ul>
                     </motion.div>
 
-                    {/* MominAI Solution Card */}
+                    {/* MowisAI Solution Card */}
                     <motion.div
                         className="problem-card solution glass-panel"
                         initial={{ opacity: 0, x: 30 }}
@@ -62,7 +62,7 @@ const Problem = () => {
                     >
                         <div className="card-header">
                             <ShieldCheck className="icon-success" />
-                            <h3>MominAI Runtime</h3>
+                            <h3>MowisAI Runtime</h3>
                         </div>
                         <ul className="problem-list">
                             <li>
