@@ -1,5 +1,5 @@
 .architecture-section {
-    background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.02), transparent 70%);
+    background: radial-gradient(circle at 50% 0%, var(--accent-teal-dim), transparent 70%);
 }
 
 .arch-diagram-container {
@@ -14,7 +14,7 @@
     padding: 40px;
     position: relative;
     border: 1px dashed rgba(255, 255, 255, 0.15);
-    background: rgba(5, 5, 7, 0.4);
+    background: var(--bg-card);
 }
 
 .sandbox-label {

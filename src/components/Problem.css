@@ -1,5 +1,5 @@
 .problem-section {
-    background-color: #000;
+    background: var(--gradient-bg);
     min-height: 100vh;
     padding-top: 100px;
     display: flex;
@@ -19,7 +19,7 @@
     font-size: 3rem;
     line-height: 1.1;
     margin-bottom: 16px;
-    background: linear-gradient(to bottom, #fff, #bbb);
+    background: linear-gradient(to right, var(--accent-pearl), var(--accent-cream));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -40,7 +40,7 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.8;
-    color: #a1a1aa;
+    color: var(--text-secondary);
 }
 
 .problem-visual-wrapper {

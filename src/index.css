@@ -1,23 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Premium Dark Palette */
-  --bg-dark: #050507;
-  --bg-card: rgba(12, 12, 15, 0.7);
+  /* Premium Dark Palette - Now Teal Dominant */
+  --bg-dark: #001212;
+  --bg-teal-deep: #002b2b;
+  --bg-card: rgba(0, 43, 43, 0.7);
   --text-primary: #fcfcfc;
   /* Pearl White */
-  --text-secondary: #A1A1AA;
-  --text-tertiary: #52525B;
+  --text-secondary: #fffdf0;
+  /* Cream */
+  --text-tertiary: #A1A1AA;
 
   /* Accents - Teal, Pearl & Cream */
   --accent-teal: #00d1c1;
-  --accent-teal-dim: rgba(0, 209, 193, 0.15);
+  --accent-teal-dim: rgba(0, 209, 193, 0.2);
   --accent-pearl: #fcfcfc;
   --accent-cream: #fffdf0;
-  --accent-cream-dim: rgba(255, 253, 240, 0.15);
+  --accent-cream-dim: rgba(255, 253, 240, 0.2);
 
   /* Gradients */
   --gradient-main: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-cream) 100%);
+  --gradient-bg: linear-gradient(135deg, #002b2b 0%, #001212 100%);
   --gradient-glow: radial-gradient(circle at 50% 50%, var(--accent-teal-dim), transparent 70%);
 
   /* Spacing */
@@ -36,7 +39,9 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-dark);
+  background: var(--bg-dark);
+  background-image: var(--gradient-bg);
+  background-attachment: fixed;
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -52,7 +57,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
   mix-blend-mode: overlay;
@@ -73,7 +78,7 @@ h6 {
 h1 {
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 700;
-  background: linear-gradient(to right, #fff, #a5a5a5);
+  background: linear-gradient(to right, var(--accent-pearl), var(--accent-cream));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

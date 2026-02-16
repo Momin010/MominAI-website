@@ -13,9 +13,9 @@
 
 .navbar.scrolled {
     height: 70px;
-    background: rgba(5, 5, 7, 0.6);
+    background: var(--bg-card);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--accent-teal-dim);
 }
 
 .nav-container {
