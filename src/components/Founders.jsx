@@ -206,7 +206,7 @@ const Founders = () => {
                     transition={{ delay: 0.5, duration: 0.6 }}
                 >
                     <div className="cta-content glass-panel">
-                        <h3>Y Combinator W2026</h3>
+                        <h3>Y Combinator S2026</h3>
                         <p>Applying to build the future of agent-native computing</p>
                     </div>
                 </motion.div>
