@@ -13,40 +13,63 @@
     max-width: 600px;
     width: 100%;
     padding: 60px 40px;
-    border-radius: 32px;
+    background: rgba(18, 18, 23, 0.8);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 40px;
     text-align: center;
     position: relative;
     z-index: 2;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
 }
 
 .icon-wrapper {
-    width: 100px;
-    height: 100px;
-    background: rgba(255, 255, 255, 0.03);
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-main);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 32px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px var(--accent-blue-dim);
+    color: white;
+}
+
+.icon-wrapper svg {
+    color: white !important;
 }
 
 .thank-you-title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-weight: 800;
     margin-bottom: 20px;
+    letter-spacing: -0.02em;
 }
 
 .thank-you-text {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--text-secondary);
     line-height: 1.6;
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .thank-you-actions {
     display: flex;
     gap: 16px;
     justify-content: center;
+}
+
+.thank-you-actions .primary-btn,
+.thank-you-actions .secondary-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .social-proof {

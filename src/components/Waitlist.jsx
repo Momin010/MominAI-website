@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
+import { sendWelcomeEmail } from '../lib/email';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
@@ -45,6 +46,8 @@ const Waitlist = () => {
                 }
             } else {
                 setMessage({ type: 'success', text: 'You have been added to the waitlist!' });
+                // Send welcome email (asynchronous, don't block UI)
+                sendWelcomeEmail(email).catch(err => console.error("Email fail:", err));
                 handleSuccess();
             }
         } catch (error) {
@@ -58,7 +61,7 @@ const Waitlist = () => {
     const handleGoogleLogin = async () => {
         setLoading(true);
         try {
-            const { error } = await supabase.auth.signInWithOAuth({
+            const { data, error } = await supabase.auth.signInWithOAuth({
                 provider: 'google',
                 options: {
                     redirectTo: window.location.origin + '/thank-you'

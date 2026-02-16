@@ -29,7 +29,7 @@ const ThankYou = () => {
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
                 >
-                    <Mail size={48} className="text-gradient" />
+                    <Mail size={32} />
                 </motion.div>
 
                 <h1 className="thank-you-title">You're on the <span className="text-gradient">List!</span></h1>
