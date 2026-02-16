@@ -5,6 +5,7 @@ import Problem from './pages/Problem';
 import Spec from './pages/Spec';
 import Contact from './pages/Contact';
 import Demo from './pages/Demo';
+import ThankYou from './pages/ThankYou';
 import './index.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/spec" element={<Spec />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/demo" element={<Demo />} />
+          <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </Layout>
     </Router>

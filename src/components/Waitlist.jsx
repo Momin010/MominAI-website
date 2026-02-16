@@ -1,13 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import './Waitlist.css';
 
 const Waitlist = () => {
     const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
+    const [isJoined, setIsJoined] = useState(false);
     const [message, setMessage] = useState({ type: '', text: '' });
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // Check if user has already joined in this session/browser
+        const hasJoined = localStorage.getItem('mominai_waitlist_joined');
+        if (hasJoined) {
+            setIsJoined(true);
+        }
+    }, []);
+
+    const handleSuccess = () => {
+        localStorage.setItem('mominai_waitlist_joined', 'true');
+        setIsJoined(true);
+        navigate('/thank-you');
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,15 +39,13 @@ const Waitlist = () => {
             if (error) {
                 if (error.code === '23505') {
                     setMessage({ type: 'error', text: 'This email is already on the waitlist!' });
+                    setTimeout(() => handleSuccess(), 2000);
                 } else {
                     throw error;
                 }
             } else {
                 setMessage({ type: 'success', text: 'You have been added to the waitlist!' });
-                setEmail('');
-
-                // Optional: Clear message after a few seconds
-                setTimeout(() => setMessage({ type: '', text: '' }), 5000);
+                handleSuccess();
             }
         } catch (error) {
             console.error('Waitlist error:', error);
@@ -39,6 +54,25 @@ const Waitlist = () => {
             setLoading(false);
         }
     };
+
+    const handleGoogleLogin = async () => {
+        setLoading(true);
+        try {
+            const { error } = await supabase.auth.signInWithOAuth({
+                provider: 'google',
+                options: {
+                    redirectTo: window.location.origin + '/thank-you'
+                }
+            });
+            if (error) throw error;
+        } catch (error) {
+            console.error('Auth error:', error);
+            setMessage({ type: 'error', text: 'Google Sign-in failed. Please try again.' });
+            setLoading(false);
+        }
+    };
+
+    if (isJoined) return null;
 
     return (
         <section className="waitlist-section" id="waitlist">
@@ -54,25 +88,40 @@ const Waitlist = () => {
                         <h2 className="waitlist-title">Join the <span className="text-gradient">Waitlist</span></h2>
                         <p className="waitlist-subtitle">
                             Be the first to experience the future of agent-native execution.
-                            Get early access and exclusive updates.
+                            Sign up with Google for a faster experience.
                         </p>
 
-                        <form onSubmit={handleSubmit} className="waitlist-form">
-                            <div className="input-group">
-                                <input
-                                    type="email"
-                                    placeholder="Enter your email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                    disabled={loading}
-                                    className="waitlist-input"
-                                />
-                                <button type="submit" className="waitlist-btn primary-btn" disabled={loading}>
-                                    {loading ? 'Joining...' : <>Join Now <Send size={18} /></>}
-                                </button>
+                        <div className="auth-options">
+                            <form onSubmit={handleSubmit} className="waitlist-form">
+                                <div className="input-group">
+                                    <input
+                                        type="email"
+                                        placeholder="Enter your email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                        disabled={loading}
+                                        className="waitlist-input"
+                                    />
+                                    <button type="submit" className="waitlist-btn primary-btn" disabled={loading}>
+                                        {loading ? 'Joining...' : <>Join <Send size={18} /></>}
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div className="divider">
+                                <span>OR</span>
                             </div>
-                        </form>
+
+                            <button
+                                onClick={handleGoogleLogin}
+                                className="google-btn secondary-btn"
+                                disabled={loading}
+                            >
+                                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" width="18" />
+                                Continue with Google
+                            </button>
+                        </div>
 
                         <AnimatePresence>
                             {message.text && (
