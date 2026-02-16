@@ -1,20 +1,44 @@
 .architecture-section {
-    background: radial-gradient(circle at 50% 0%, var(--accent-teal-dim), transparent 70%);
+    background: transparent;
 }
 
-.arch-diagram-container {
+.arch-visual-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.diagram-panel.glass-panel {
+    background: var(--bg-card);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
-    padding: 40px 0;
+    align-items: center;
 }
 
-.sandbox-container {
+.arch-diagram-img {
     width: 100%;
-    max-width: 900px;
-    padding: 40px;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    /* Helps blend black background images if it has one */
     position: relative;
-    border: 1px dashed rgba(255, 255, 255, 0.15);
-    background: var(--bg-card);
+    z-index: 2;
+}
+
+.diagram-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, var(--accent-teal-dim), transparent 70%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .sandbox-label {

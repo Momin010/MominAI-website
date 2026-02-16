@@ -12,11 +12,18 @@
     margin: 0 auto;
 }
 
-.principles-panel {
-    padding: 20px;
+.principles-panel.glass-panel {
+    background: var(--bg-card);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 60px;
     position: relative;
     overflow: hidden;
-    border-radius: 24px;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .principles-main-img {

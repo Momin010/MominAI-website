@@ -1,10 +1,6 @@
 .problem-section {
-    background: var(--gradient-bg);
-    min-height: 100vh;
-    padding-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: transparent;
+    padding: 120px 0;
 }
 
 .problem-container {
@@ -13,34 +9,6 @@
     align-items: center;
     gap: 60px;
     text-align: center;
-}
-
-.section-header .section-title {
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-bottom: 16px;
-    background: linear-gradient(to right, var(--accent-pearl), var(--accent-cream));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-@media (max-width: 768px) {
-    .section-title {
-        font-size: 2.2rem;
-    }
-
-    .problem-section {
-        padding-top: 80px;
-    }
-}
-
-.large-text {
-    font-size: 1.25rem;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.8;
-    color: var(--text-secondary);
 }
 
 .problem-visual-wrapper {
