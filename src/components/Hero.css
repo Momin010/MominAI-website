@@ -108,7 +108,8 @@
 }
 
 .primary-btn.large,
-.secondary-btn.large {
+.secondary-btn.large,
+.outline-btn.large {
     padding: 14px 28px;
     font-size: 1rem;
     display: flex;
@@ -145,6 +146,20 @@
     border-color: var(--text-primary);
 }
 
+.outline-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.outline-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
 @media (max-width: 768px) {
     .hero-section {
         padding-top: 100px;
@@ -166,7 +181,8 @@
     }
 
     .primary-btn.large,
-    .secondary-btn.large {
+    .secondary-btn.large,
+    .outline-btn.large {
         width: 100%;
         justify-content: center;
     }

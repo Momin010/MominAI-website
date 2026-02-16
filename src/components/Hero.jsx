@@ -58,7 +58,13 @@ const Hero = () => {
                         <button onClick={() => navigate('/demo')} className="primary-btn large">
                             <Play size={18} /> Watch Demo
                         </button>
-                        <button onClick={() => navigate('/spec')} className="secondary-btn large">
+                        <button onClick={() => {
+                            const waitlist = document.getElementById('waitlist');
+                            if (waitlist) waitlist.scrollIntoView({ behavior: 'smooth' });
+                        }} className="secondary-btn large">
+                            Join Waitlist
+                        </button>
+                        <button onClick={() => navigate('/spec')} className="outline-btn large">
                             <FileText size={18} /> Read the Spec
                         </button>
                     </motion.div>

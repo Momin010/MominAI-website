@@ -3,6 +3,7 @@ import Principles from '../components/Principles';
 import Architecture from '../components/Architecture';
 import Laws from '../components/Laws';
 import Founders from '../components/Founders';
+import Waitlist from '../components/Waitlist';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Laws />
             <Principles />
             <Architecture />
+            <Waitlist />
             <Founders />
         </>
     );

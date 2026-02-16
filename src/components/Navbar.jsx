@@ -18,6 +18,7 @@ const Navbar = () => {
     const navLinks = [
         { name: 'Problem', href: '/problem' },
         { name: 'Specification', href: '/spec' },
+        { name: 'Waitlist', href: '#waitlist' },
     ];
 
     const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -37,11 +38,34 @@ const Navbar = () => {
 
                 {/* Desktop Links */}
                 <div className="nav-links desktop-only">
-                    {navLinks.map((link) => (
-                        <Link key={link.name} to={link.href} className="nav-link">
-                            {link.name}
-                        </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                        if (link.href.startsWith('#')) {
+                            return (
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="nav-link"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        const el = document.querySelector(link.href);
+                                        if (el) {
+                                            el.scrollIntoView({ behavior: 'smooth' });
+                                        } else {
+                                            navigate('/' + link.href);
+                                        }
+                                        closeMenu();
+                                    }}
+                                >
+                                    {link.name}
+                                </a>
+                            );
+                        }
+                        return (
+                            <Link key={link.name} to={link.href} className="nav-link">
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 <div className="nav-actions desktop-only">
@@ -65,11 +89,34 @@ const Navbar = () => {
                         transition={{ duration: 0.3 }}
                     >
                         <div className="mobile-nav-links">
-                            {navLinks.map((link) => (
-                                <Link key={link.name} to={link.href} className="mobile-nav-link" onClick={closeMenu}>
-                                    {link.name}
-                                </Link>
-                            ))}
+                            {navLinks.map((link) => {
+                                if (link.href.startsWith('#')) {
+                                    return (
+                                        <a
+                                            key={link.name}
+                                            href={link.href}
+                                            className="mobile-nav-link"
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                const el = document.querySelector(link.href);
+                                                if (el) {
+                                                    el.scrollIntoView({ behavior: 'smooth' });
+                                                } else {
+                                                    navigate('/' + link.href);
+                                                }
+                                                closeMenu();
+                                            }}
+                                        >
+                                            {link.name}
+                                        </a>
+                                    );
+                                }
+                                return (
+                                    <Link key={link.name} to={link.href} className="mobile-nav-link" onClick={closeMenu}>
+                                        {link.name}
+                                    </Link>
+                                );
+                            })}
                             <button onClick={() => { navigate('/demo'); closeMenu(); }} className="primary-btn mobile-btn"><Play size={16} /> Watch Demo</button>
                         </div>
                     </motion.div>
