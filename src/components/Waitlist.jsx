@@ -46,8 +46,6 @@ const Waitlist = () => {
                 }
             } else {
                 setMessage({ type: 'success', text: 'You have been added to the waitlist!' });
-                // Send welcome email (asynchronous, don't block UI)
-                sendWelcomeEmail(email).catch(err => console.error("Email fail:", err));
                 handleSuccess();
             }
         } catch (error) {
