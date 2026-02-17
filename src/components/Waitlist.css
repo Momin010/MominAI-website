@@ -6,7 +6,8 @@
 
 .waitlist-card {
     background: var(--bg-card);
-    backdrop-filter: blur(24px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 40px;
     padding: 60px;
@@ -16,6 +17,8 @@
     max-width: 900px;
     margin: 0 auto;
     box-shadow: 0 40px 120px -20px rgba(0, 0, 0, 0.6);
+    transform: translateZ(0);
+    /* Hardware Acceleration */
 }
 
 .waitlist-content {

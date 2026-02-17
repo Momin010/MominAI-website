@@ -15,7 +15,9 @@
     height: 70px;
     background: var(--bg-card);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--accent-teal-dim);
+    transform: translateZ(0);
 }
 
 .nav-container {

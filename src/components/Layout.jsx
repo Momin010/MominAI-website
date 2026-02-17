@@ -36,6 +36,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="layout">
+      <div className="fixed-background" />
       <Navbar />
       <main className="main-content">
         {children}

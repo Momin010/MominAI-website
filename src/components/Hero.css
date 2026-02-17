@@ -24,6 +24,8 @@
     filter: blur(80px);
     opacity: 0.6;
     animation: float 10s ease-in-out infinite;
+    will-change: transform;
+    pointer-events: none;
 }
 
 .orb-1 {
