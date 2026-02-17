@@ -21,7 +21,7 @@
 .glow-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
+    filter: blur(40px);
     opacity: 0.6;
     animation: float 10s ease-in-out infinite;
     will-change: transform;
@@ -40,7 +40,7 @@
 .orb-2 {
     width: 500px;
     height: 500px;
-    background: var(--accent-cream-dim);
+    background: var(--accent-pearl-dim);
     bottom: 0;
     right: -100px;
     animation-delay: -5s;

@@ -10,8 +10,8 @@
 
 .diagram-panel.glass-panel {
     background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 40px;
     padding: 60px;
@@ -21,8 +21,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transform: translateZ(0);
-    /* Hardware Acceleration */
 }
 
 .arch-diagram-img {
@@ -90,8 +88,8 @@
 }
 
 .hands:hover {
-    border-color: rgba(0, 209, 193, 0.3);
-    box-shadow: 0 10px 40px -10px rgba(0, 209, 193, 0.2);
+    border-color: rgba(0, 128, 128, 0.3);
+    box-shadow: 0 10px 40px -10px rgba(0, 128, 128, 0.2);
 }
 
 .icon-wrapper {
@@ -106,8 +104,8 @@
 }
 
 .brain-glow {
-    color: var(--accent-cream);
-    box-shadow: 0 0 30px var(--accent-cream-dim);
+    color: var(--accent-pearl);
+    box-shadow: 0 0 30px var(--accent-pearl-dim);
 }
 
 .hands-glow {
