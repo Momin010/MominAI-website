@@ -10,8 +10,9 @@
 .spec-content {
     padding: 60px;
     border-radius: 24px;
-    background: rgba(5, 5, 7, 0.6);
-    backdrop-filter: blur(20px);
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .spec-content h1 {

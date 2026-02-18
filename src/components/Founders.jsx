@@ -9,7 +9,6 @@ const Founders = () => {
         {
             name: "Momin Aldahdooh",
             role: "Founder & CEO",
-            location: "Tampere, Finland",
             isTechnical: true,
             bio: "Young entrepreneur who secured internships at the Finnish Parliament and Mayor's Office through strategic outreach. Founded a registered company at 14, achieving 4-figure revenue and government funding.",
             image: mominImg,
@@ -34,7 +33,6 @@ const Founders = () => {
         {
             name: "Abdul Wasay Muhammad",
             role: "Co-Founder",
-            location: "Rauma, Finland",
             isTechnical: false,
             bio: "AI entrepreneur and co-founder of MowisAI, working across AI, content, and marketing. Currently training as a software developer in school, expanding into product and technical development. Experienced in startup marketing, content strategy, and execution for AI-focused brands.",
             image: wasayImg,
@@ -100,12 +98,6 @@ const Founders = () => {
                                 <div className="founder-info">
                                     <h3 className="founder-name">{founder.name}</h3>
                                     <p className="founder-role">{founder.role}</p>
-                                    <div className="founder-meta">
-                                        <span className="meta-item">
-                                            <Building size={14} />
-                                            {founder.location}
-                                        </span>
-                                    </div>
                                 </div>
                             </div>
 

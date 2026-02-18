@@ -9,11 +9,11 @@
   /* Pearl White */
   --text-secondary: #e5e2d9;
   /* Muted Pearl */
-  --text-tertiary: #8a9999;
+  --text-tertiary: #a0acac;
 
   /* Accents - Teal & Pearl */
-  --accent-teal: #008080;
-  --accent-teal-dim: rgba(0, 128, 128, 0.2);
+  --accent-teal: #00a3a3;
+  --accent-teal-dim: rgba(0, 163, 163, 0.2);
   --accent-pearl: #F8F6F0;
   --accent-pearl-dim: rgba(248, 246, 240, 0.2);
 
@@ -51,19 +51,18 @@ body {
 .fixed-background {
   position: fixed;
   inset: 0;
-  z-index: -10;
+  z-index: -1;
   background-image: url('./assets/background.png');
   background-size: cover;
   background-position: center;
   pointer-events: none;
-  transform: translateZ(0);
 }
 
 .fixed-background::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 18, 18, 0.45), rgba(0, 18, 18, 0.45));
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
 }
 
 /* Typography */
@@ -81,7 +80,7 @@ h6 {
 h1 {
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 700;
-  background: linear-gradient(to right, var(--accent-pearl), var(--accent-cream));
+  background: linear-gradient(to right, var(--accent-pearl), var(--text-secondary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -166,7 +165,7 @@ a:hover {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   margin-bottom: 24px;
-  background: linear-gradient(to right, var(--accent-pearl), var(--accent-cream));
+  background: linear-gradient(to right, var(--accent-pearl), var(--text-secondary));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

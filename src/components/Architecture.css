@@ -83,8 +83,8 @@
 }
 
 .brain:hover {
-    border-color: rgba(255, 253, 240, 0.3);
-    box-shadow: 0 10px 40px -10px rgba(255, 253, 240, 0.2);
+    border-color: var(--accent-pearl-dim);
+    box-shadow: 0 10px 40px -10px rgba(248, 246, 240, 0.1);
 }
 
 .hands:hover {
@@ -154,7 +154,7 @@
 }
 
 .mediated-badge {
-    background: rgba(59, 130, 246, 0.1);
+    background: var(--accent-teal-dim);
     color: var(--accent-teal);
 }
 
