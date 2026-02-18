@@ -1,63 +1,91 @@
 .spec-section {
-    padding-top: 120px;
+    padding-top: 100px;
     min-height: 100vh;
+    background: var(--bg-dark);
 }
 
 .spec-container {
-    max-width: 900px !important;
+    max-width: 1000px !important;
+    padding: 40px 24px;
 }
 
 .spec-content {
     padding: 60px;
-    border-radius: 24px;
-    background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #ffffff;
+    border: 3px solid #111111;
+    box-shadow: 12px 12px 0px #111111;
 }
 
 .spec-content h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 900;
     margin-bottom: 32px;
-    color: var(--text-primary);
+    color: #111111;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
 }
 
 .spec-content h2 {
-    font-size: 1.8rem;
-    margin-top: 48px;
+    font-size: 2rem;
+    margin-top: 60px;
     margin-bottom: 24px;
-    color: var(--text-primary);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #111111;
+    border-bottom: 4px solid #111111;
     padding-bottom: 12px;
+    text-transform: uppercase;
+    font-weight: 900;
 }
 
 .spec-content h3 {
-    font-size: 1.4rem;
-    margin-top: 32px;
-    margin-bottom: 16px;
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
     color: var(--accent-teal);
+    text-transform: uppercase;
+    font-weight: 800;
 }
 
 .spec-content p {
-    margin-bottom: 16px;
+    margin-bottom: 24px;
     color: var(--text-secondary);
-    line-height: 1.8;
+    line-height: 1.5;
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .spec-content ul {
-    margin-bottom: 24px;
-    padding-left: 24px;
+    margin-bottom: 32px;
+    padding-left: 32px;
+    list-style: square;
 }
 
 .spec-content li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
 .mermaid-chart {
-    margin: 40px 0;
+    margin: 60px 0;
     display: flex;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    border-radius: 12px;
+    background: #f9f9f9;
+    padding: 40px;
+    border: 2px solid #111111;
+}
+
+@media (max-width: 768px) {
+    .spec-content {
+        padding: 40px 20px;
+        box-shadow: 6px 6px 0px #111111;
+    }
+
+    .spec-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .spec-content h2 {
+        font-size: 1.6rem;
+    }
 }

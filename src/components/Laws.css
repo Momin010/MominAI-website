@@ -1,69 +1,74 @@
 .laws-section {
-    padding-bottom: 0;
+    padding: 100px 0;
+    background: var(--bg-dark);
+    border-bottom: 2px solid #111111;
 }
 
 .laws-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
 }
 
 .law-card {
-    padding: 32px;
-    border-radius: 12px;
+    padding: 40px;
+    background: #ffffff;
+    border: 2px solid #111111;
     position: relative;
-    transition: all 0.3s ease;
+    transition: all 0.1s;
     overflow: hidden;
+    box-shadow: 6px 6px 0px #111111;
 }
 
 .law-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateY(-5px);
+    background: var(--bg-teal-deep);
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0px #111111;
 }
 
 .law-number {
     font-family: var(--font-mono);
-    font-size: 2rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.05);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #eeeeee;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10px;
+    right: 15px;
     pointer-events: none;
+    z-index: 1;
 }
 
 .laws-content-wrapper {
     display: flex;
-    gap: 40px;
+    gap: 60px;
     align-items: center;
+}
+
+.law-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    color: #111111;
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+    z-index: 2;
+}
+
+.law-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 2;
+    font-weight: 500;
+}
+
+.law-card:hover h3 {
+    color: var(--accent-teal);
 }
 
 @media (max-width: 1024px) {
     .laws-content-wrapper {
         flex-direction: column-reverse;
     }
-
-    .laws-visual {
-        display: block;
-        /* Show visual on tablet/mobile but stacked */
-        width: 100%;
-        height: 300px;
-        flex: none;
-    }
-}
-
-.law-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-}
-
-.law-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.law-card:hover h3 {
-    color: var(--accent-teal);
 }

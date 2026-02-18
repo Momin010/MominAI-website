@@ -1,60 +1,59 @@
 .problem-section {
-    background: transparent;
-    padding: 120px 0;
+    background: var(--bg-dark);
+    padding: 100px 0;
+    border-bottom: 2px solid #111111;
 }
 
 .problem-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 60px;
-    text-align: center;
+    align-items: flex-start;
+    /* Left aligned for sharp theme */
+    gap: 40px;
+    text-align: left;
 }
 
 .problem-visual-wrapper {
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     position: relative;
+    border: 2px solid #111111;
+    background: #ffffff;
+    box-shadow: 8px 8px 0px #111111;
 }
 
 .problem-panel {
-    border-radius: 24px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
     position: relative;
 }
 
 .problem-main-img {
     width: 100%;
     height: auto;
-    max-width: 100%;
-    /* Force containment */
     display: block;
-    object-fit: contain;
-    /* Ensure full image is visible */
+    object-fit: cover;
 }
 
 .diagram-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-    pointer-events: none;
+    display: none;
+    /* Removed for sharp look */
 }
 
 @media (max-width: 768px) {
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     .problem-section {
-        padding: 80px 20px;
-        /* Add horizontal padding */
+        padding: 60px 20px;
+    }
+
+    .problem-container {
+        align-items: center;
+        text-align: center;
     }
 
     .problem-visual-wrapper {
-        padding: 0 10px;
+        box-shadow: 4px 4px 0px #111111;
     }
 }

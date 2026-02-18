@@ -1,7 +1,7 @@
 .footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 80px 0 40px;
-    background: linear-gradient(to top, var(--bg-card), transparent);
+    border-top: 3px solid #111111;
+    padding: 80px 0 60px;
+    background: #ffffff;
     margin-top: 100px;
 }
 
@@ -10,10 +10,13 @@
     justify-content: space-between;
     gap: 60px;
     flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
 }
 
 .footer-brand {
-    max-width: 300px;
+    max-width: 400px;
 }
 
 .logo-image.small {
@@ -21,49 +24,59 @@
 }
 
 .footer-desc {
-    margin-top: 20px;
+    margin-top: 24px;
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 500;
 }
 
 .copyright {
-    margin-top: 40px;
-    color: var(--text-tertiary);
+    margin-top: 48px;
+    color: #111111;
     font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .footer-links {
     display: flex;
-    gap: 60px;
+    gap: 80px;
     flex-wrap: wrap;
 }
 
 .link-group h4 {
-    color: var(--text-primary);
-    margin-bottom: 20px;
+    color: #111111;
+    margin-bottom: 24px;
     font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .link-group a {
     display: block;
     color: var(--text-secondary);
-    margin-bottom: 12px;
-    font-size: 0.9rem;
-    transition: color 0.2s;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.1s;
 }
 
 .link-group a:hover {
     color: var(--accent-teal);
+    transform: translateX(4px);
 }
 
 @media (max-width: 768px) {
     .footer {
-        padding: 40px 0;
+        padding: 60px 0;
         margin-top: 60px;
     }
 
     .footer-container {
+        padding: 0 24px;
         flex-direction: column;
         gap: 40px;
     }
@@ -75,6 +88,6 @@
     }
 
     .link-group {
-        width: calc(50% - 20px);
+        width: 100%;
     }
 }
