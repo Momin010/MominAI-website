@@ -31,24 +31,13 @@
     width: 100%;
     height: auto;
     max-width: 100%;
-    /* Force containment */
     display: block;
-    border-radius: 12px;
     object-fit: contain;
-    /* Ensure full image is visible */
+    mix-blend-mode: screen;
 }
 
 .visual-glow-small {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    background: radial-gradient(circle, var(--accent-teal-dim), transparent 70%);
-    filter: blur(50px);
-    z-index: -1;
-    pointer-events: none;
+    display: none;
 }
 
 @media (max-width: 768px) {

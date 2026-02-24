@@ -1,12 +1,12 @@
-# MominAI Website
+# MowisAI Website
 
-The official landing page for **MominAI**, an agent-native execution substrate designed to safely host autonomous AI agents in isolated environments.
+The official landing page for **MowisAI**, an agent-native execution substrate designed to safely host autonomous AI agents in isolated environments.
 
-![MominAI Banner](src/assets/logo.png)
+![MowisAI Banner](src/assets/logo.png)
 
 ## 🚀 Overview
 
-This website serves as the primary gateway for MominAI, explaining the core problems with current agent frameworks (direct OS access, lack of isolation) and presenting the MominAI runtime solution (Sandbox, Brain/Hands model, Governance Laws).
+This website serves as the primary gateway for MowisAI, explaining the core problems with current agent frameworks (direct OS access, lack of isolation) and presenting the MowisAI runtime solution (Sandbox, Brain/Hands model, Governance Laws).
 
 It is built as a highly responsive Single Page Application (SPA) with a premium "Glassmorphism" aesthetic.
 
@@ -67,4 +67,4 @@ src/
 
 ## 📜 License
 
-© 2026 MominAI. All rights reserved.
+© 2026 MowisAI. All rights reserved.

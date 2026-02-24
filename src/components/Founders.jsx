@@ -32,7 +32,7 @@ const Founders = () => {
         },
         {
             name: "Abdul Wasay Muhammad",
-            role: "Co-Founder",
+            role: "Co-Founder & COO (Chief Operating Officer)",
             isTechnical: false,
             bio: "AI entrepreneur and co-founder of MowisAI, working across AI, content, and marketing. Currently training as a software developer in school, expanding into product and technical development. Experienced in startup marketing, content strategy, and execution for AI-focused brands.",
             image: wasayImg,
