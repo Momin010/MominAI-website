@@ -34,8 +34,8 @@ It is built as a highly responsive Single Page Application (SPA) with a premium 
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/Momin010/MominAI-website.git
-    cd MominAI-website
+    git clone https://github.com/Momin010/MowisAI-website.git
+    cd MowisAI-website
     ```
 
 2.  **Install dependencies**

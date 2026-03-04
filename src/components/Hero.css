@@ -164,7 +164,7 @@
 
 @media (max-width: 768px) {
     .hero-section {
-        padding-top: 100px;
+        padding-top: var(--nav-height);
     }
 
     .hero-title {

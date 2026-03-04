@@ -34,9 +34,16 @@
 }
 
 .logo-image {
-    height: 40px;
+    height: 220px;
     width: auto;
     object-fit: contain;
+    transform: translateY(-5px);
+    transition: all 0.2s ease;
+}
+
+.navbar.scrolled .logo-image {
+    height: 180px;
+    transform: translateY(-5px);
 }
 
 .nav-links {

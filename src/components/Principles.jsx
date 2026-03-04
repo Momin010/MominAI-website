@@ -13,7 +13,7 @@ const Principles = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="section-title">MominAI's Core <span className="text-gradient">Principles</span></h2>
+                    <h2 className="section-title">MowisAI's Core <span className="text-gradient">Principles</span></h2>
                     <p className="section-subtitle">
                         Built on the foundation of security, transparency, and agent-native architecture.
                     </p>
