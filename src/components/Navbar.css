@@ -34,7 +34,7 @@
 }
 
 .logo-image {
-    height: 220px;
+    height: 180px;
     width: auto;
     object-fit: contain;
     transform: translateY(-5px);
