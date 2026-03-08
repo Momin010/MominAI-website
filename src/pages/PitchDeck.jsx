@@ -16,8 +16,10 @@ const PitchDeck = () => {
     }, []);
 
     const fileUrl = `${window.location.origin}/pitchdeck.pptx`;
-    // Microsoft Office Viewer URL
+    // Microsoft Office Viewer URL for embedding
     const embedUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(fileUrl)}`;
+    // Microsoft Office Viewer URL for full screen immersive view
+    const viewUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(fileUrl)}`;
 
     return (
         <div className="pitchdeck-page">
@@ -64,7 +66,7 @@ const PitchDeck = () => {
                             <span></span><span></span><span></span>
                         </div>
                         <div className="viewer-url">mowisai_pitch_deck.pptx</div>
-                        <a href={fileUrl} target="_blank" rel="noopener noreferrer" className="external-link">
+                        <a href={viewUrl} target="_blank" rel="noopener noreferrer" className="external-link">
                             <ExternalLink size={14} /> Open Fullscreen
                         </a>
                     </div>
