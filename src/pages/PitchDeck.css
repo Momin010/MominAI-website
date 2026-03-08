@@ -1,0 +1,155 @@
+.pitchdeck-page {
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    background: var(--bg-dark);
+    position: relative;
+    overflow-x: hidden;
+}
+
+.pitchdeck-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
+    padding: 10px 20px;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+    border-color: var(--accent-teal);
+    transform: translateX(-4px);
+}
+
+.local-warning {
+    margin-bottom: 30px;
+    padding: 16px 24px;
+    border: 1px solid rgba(255, 184, 0, 0.2);
+    background: rgba(255, 184, 0, 0.03) !important;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-radius: 16px;
+}
+
+.warning-icon {
+    color: #ffb800;
+    flex-shrink: 0;
+}
+
+.local-warning p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.local-warning strong {
+    color: #ffb800;
+}
+
+.viewer-container {
+    width: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    background: #1a1a1a !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+}
+
+.viewer-toolbar {
+    padding: 14px 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.viewer-toolbar .dots {
+    display: flex;
+    gap: 8px;
+}
+
+.viewer-toolbar .dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.viewer-url {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 4px 16px;
+    border-radius: 6px;
+    opacity: 0.8;
+}
+
+.external-link {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--accent-teal);
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.external-link:hover {
+    opacity: 0.8;
+}
+
+.iframe-wrapper {
+    position: relative;
+    background: #000;
+}
+
+.viewer-footer {
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    text-align: center;
+}
+
+.viewer-footer p {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.5;
+}
+
+.primary-btn.sm {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .pitchdeck-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .viewer-url {
+        display: none;
+    }
+
+    .iframe-wrapper iframe {
+        height: 450px;
+    }
+}

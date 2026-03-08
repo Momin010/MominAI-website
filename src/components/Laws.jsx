@@ -1,17 +1,8 @@
 import { motion } from 'framer-motion';
-import { Scale } from 'lucide-react';
+import inWorkImg from '../assets/in-work.png';
 import './Laws.css';
 
 const Laws = () => {
-    const laws = [
-        { title: "No Direct Action", desc: "An agent may never act on the system except through approved tools." },
-        { title: "No Privilege Escalation", desc: "No agent or subagent may gain more permissions than explicitly granted." },
-        { title: "Hierarchical Authority", desc: "Subagents are always strictly less powerful than their parent." },
-        { title: "Explicit Communication", desc: "Agents may only exchange information through explicit, observable mechanisms." },
-        { title: "Resource Boundaries", desc: "CPU, RAM, storage, and GPU allocations must be enforced absolutely." },
-        { title: "Observability Is Mandatory", desc: "All tool calls, actions, and state transitions must be auditable." },
-    ];
-
     return (
         <section id="laws" className="section laws-section">
             <div className="container">
@@ -28,22 +19,16 @@ const Laws = () => {
                     </p>
                 </motion.div>
 
-                <div className="laws-grid">
-                    {laws.map((law, index) => (
-                        <motion.div
-                            key={index}
-                            className="law-card glass"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1, duration: 0.5 }}
-                        >
-                            <div className="law-number">0{index + 1}</div>
-                            <h3>{law.title}</h3>
-                            <p>{law.desc}</p>
-                        </motion.div>
-                    ))}
-                </div>
+                <motion.div
+                    className="laws-visualization"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: 'easeOut' }}
+                >
+                    <img src={inWorkImg} alt="Constitutional Laws Visualization" className="laws-image" />
+                    <div className="visual-glow"></div>
+                </motion.div>
             </div>
         </section>
     );

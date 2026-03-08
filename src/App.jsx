@@ -6,6 +6,7 @@ import Spec from './pages/Spec';
 import Contact from './pages/Contact';
 import Demo from './pages/Demo';
 import ThankYou from './pages/ThankYou';
+import PitchDeck from './pages/PitchDeck';
 import './index.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/pitch-deck" element={<PitchDeck />} />
         </Routes>
       </Layout>
     </Router>

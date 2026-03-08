@@ -16,7 +16,7 @@ const Navbar = () => {
     });
 
     const navLinks = [
-        { name: 'Problem', href: '#problem' },
+        { name: 'Pitch Deck', href: '/pitch-deck' },
         { name: 'Specification', href: '/spec' },
         { name: 'Waitlist', href: '#waitlist' },
     ];
