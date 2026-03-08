@@ -15,11 +15,14 @@ const PitchDeck = () => {
         }
     }, []);
 
-    const fileUrl = `${window.location.origin}/pitchdeck.pptx`;
-    // Microsoft Office Viewer URL for embedding
-    const embedUrl = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(fileUrl)}`;
-    // Microsoft Office Viewer URL for full screen immersive view
-    const viewUrl = `https://view.officeapps.live.com/op/view.aspx?src=${encodeURIComponent(fileUrl)}`;
+    const googleSlidesUrl = "https://docs.google.com/presentation/d/11NdocRHVB5sUfU0lj5CZkRBkDqmiofTl";
+
+    // Google Slides Embed URL
+    const embedUrl = `${googleSlidesUrl}/embed?start=false&loop=false&delayms=3000`;
+    // Google Slides View URL for full screen
+    const viewUrl = `${googleSlidesUrl}/edit?usp=sharing`;
+    // Local backup file for download
+    const downloadUrl = "/pitchdeck.pptx";
 
     return (
         <div className="pitchdeck-page">
@@ -35,8 +38,8 @@ const PitchDeck = () => {
                     </button>
                     <h1 className="text-gradient">Pitch Deck Preview</h1>
                     <div className="header-actions">
-                        <a href="/pitchdeck.pptx" className="primary-btn sm" download>
-                            <Download size={18} /> Download
+                        <a href={downloadUrl} className="primary-btn sm" download>
+                            <Download size={18} /> Download PPTX
                         </a>
                     </div>
                 </motion.div>
@@ -77,11 +80,14 @@ const PitchDeck = () => {
                             width="100%"
                             height="650px"
                             frameBorder="0"
+                            allowFullScreen={true}
+                            mozallowfullscreen="true"
+                            webkitallowfullscreen="true"
                             title="Pitch Deck Preview"
                         >
                             <div className="iframe-fallback">
                                 <p>Your browser doesn't support iframes.</p>
-                                <a href="/pitchdeck.pptx" className="primary-btn">Download Presentation</a>
+                                <a href={googleSlidesUrl} className="primary-btn">View on Google Slides</a>
                             </div>
                         </iframe>
                     </div>
