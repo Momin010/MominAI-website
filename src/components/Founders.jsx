@@ -32,7 +32,7 @@ const Founders = () => {
         },
         {
             name: "Abdul Wasay Muhammad",
-            role: "Co-Founder & COO (Chief Operating Officer)",
+            role: "Co-Founder & COO",
             isTechnical: false,
             bio: "AI entrepreneur and co-founder of MowisAI, working across AI, content, and marketing. Currently training as a software developer in school, expanding into product and technical development. Experienced in startup marketing, content strategy, and execution for AI-focused brands.",
             image: wasayImg,
@@ -190,18 +190,7 @@ const Founders = () => {
                     ))}
                 </div>
 
-                <motion.div
-                    className="founders-cta"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.5, duration: 0.6 }}
-                >
-                    <div className="cta-content glass-panel">
-                        <h3>Y Combinator S2026</h3>
-                        <p>Applying to build the future of agent-native computing</p>
-                    </div>
-                </motion.div>
+
             </div>
         </section>
     );
