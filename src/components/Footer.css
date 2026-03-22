@@ -1,11 +1,46 @@
 .footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding: 80px 0 40px;
-    background: linear-gradient(to top, var(--bg-card), transparent);
-    margin-top: 100px;
+    margin-top: 0;
+    background-image: url('../assets/background.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 10, 10, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 0;
+}
+
+.footer.with-fade {
+    border-top: none;
+    padding-top: 150px;
+}
+
+.footer.with-fade::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
+    background: linear-gradient(to bottom, var(--bg-page) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 1;
 }
 
 .footer-container {
+    position: relative;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     gap: 60px;
@@ -17,19 +52,19 @@
 }
 
 .logo-image.small {
-    height: 180px;
+    height: 80px;
 }
 
 .footer-desc {
     margin-top: 20px;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
 .copyright {
     margin-top: 40px;
-    color: var(--text-tertiary);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 0.85rem;
 }
 
@@ -40,14 +75,14 @@
 }
 
 .link-group h4 {
-    color: var(--text-primary);
+    color: #ffffff;
     margin-bottom: 20px;
     font-size: 1rem;
 }
 
 .link-group a {
     display: block;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 12px;
     font-size: 0.9rem;
     transition: color 0.2s;

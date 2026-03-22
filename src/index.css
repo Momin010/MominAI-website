@@ -1,33 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root {
-  /* Premium Dark Palette - Now Teal Dominant */
+  /* ── Hero (dark) palette ── */
   --bg-dark: #000000;
   --bg-teal-deep: #001f1f;
-  --bg-card: rgba(0, 31, 31, 0.7);
-  --text-primary: #F8F6F0;
-  /* Pearl White */
-  --text-secondary: #e5e2d9;
-  /* Muted Pearl */
-  --text-tertiary: #a0acac;
 
-  /* Accents - Teal & Pearl */
-  --accent-teal: #00a3a3;
-  --accent-teal-dim: rgba(0, 163, 163, 0.2);
+  /* ── Light (pearl) palette — used everywhere below hero ── */
+  --bg-page: #F6F5F2;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F0EFEC;
+  --bg-subtle: #EDECEA;
+
+  /* Text on light background */
+  --text-primary: #111118;
+  --text-secondary: #52515a;
+  --text-tertiary: #8a8898;
+
+  /* Hero-specific text (light on dark) */
+  --hero-text-primary: #F8F6F0;
+  --hero-text-secondary: #c8c6c0;
+
+  /* Accents — teal works on both dark + light */
+  --accent-teal: #007f7f;
+  --accent-teal-bright: #00a3a3;
+  --accent-teal-dim: rgba(0, 163, 163, 0.15);
   --accent-pearl: #F8F6F0;
   --accent-pearl-dim: rgba(248, 246, 240, 0.2);
 
+  /* Borders on light */
+  --border-light: rgba(0, 0, 0, 0.08);
+  --border-medium: rgba(0, 0, 0, 0.12);
+
   /* Gradients */
-  --gradient-main: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-pearl) 100%);
-  --gradient-bg: linear-gradient(135deg, #001f1f 0%, #000000 100%);
+  --gradient-main: linear-gradient(135deg, var(--accent-teal-bright) 0%, #34d399 100%);
+  --gradient-hero: linear-gradient(135deg, #001f1f 0%, #000000 100%);
   --gradient-glow: radial-gradient(circle at 50% 50%, var(--accent-teal-dim), transparent 70%);
 
   /* Spacing */
-  --nav-height: 80px;
+  --nav-height: 110px;
 
   /* Fonts */
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 9999px;
+  --accent-primary: var(--accent-teal);
 }
 
 * {
@@ -38,7 +59,7 @@
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--bg-dark);
+  background-color: var(--bg-page);
   color: var(--text-primary);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -47,22 +68,14 @@ body {
   min-height: 100vh;
 }
 
-/* Optimized Background */
-.fixed-background {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background-image: url('./assets/background.png');
-  background-size: cover;
-  background-position: center;
-  pointer-events: none;
+html {
+  scroll-padding-top: 150px;
 }
 
-.fixed-background::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7));
+/* Fixed background is now ONLY used by the hero section.
+   The .fixed-background div is hidden — hero owns its own bg. */
+.fixed-background {
+  display: none;
 }
 
 /* Typography */
@@ -75,15 +88,13 @@ h6 {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 h1 {
   font-size: clamp(3rem, 5vw, 5rem);
   font-weight: 700;
-  background: linear-gradient(to right, var(--accent-pearl), var(--text-secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text-primary);
 }
 
 code,
@@ -104,18 +115,15 @@ a:hover {
 /* Utilities */
 .glass {
   background: var(--bg-card);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
 }
 
 .text-gradient {
@@ -137,16 +145,16 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-dark);
+  background: var(--bg-subtle);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #bbb;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #444;
+  background: #999;
 }
 
 /* Layout Utilities */
@@ -165,10 +173,7 @@ a:hover {
   font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 800;
   margin-bottom: 24px;
-  background: linear-gradient(to right, var(--accent-pearl), var(--text-secondary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 

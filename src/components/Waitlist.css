@@ -5,10 +5,8 @@
 }
 
 .waitlist-card {
-    background: var(--bg-card);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 40px;
     padding: 60px;
     position: relative;
@@ -16,7 +14,7 @@
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
-    box-shadow: 0 40px 120px -20px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(0,0,0,0.01);
 }
 
 .waitlist-content {
@@ -47,17 +45,17 @@
 .input-group {
     display: flex;
     gap: 12px;
-    background: rgba(255, 255, 255, 0.03);
+    background: #fcfbf9;
     padding: 8px;
     border-radius: 100px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
 }
 
 .input-group:focus-within {
     border-color: var(--accent-teal);
-    background: rgba(255, 255, 255, 0.05);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    background: #ffffff;
+    box-shadow: 0 0 20px rgba(0, 127, 127, 0.15);
 }
 
 .waitlist-input {
@@ -65,13 +63,13 @@
     background: transparent;
     border: none;
     padding: 12px 24px;
-    color: white;
+    color: var(--text-primary);
     font-size: 1rem;
     outline: none;
 }
 
 .waitlist-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+    color: var(--text-tertiary);
 }
 
 .waitlist-btn {
@@ -161,7 +159,7 @@
     content: '';
     flex: 1;
     height: 1px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .google-btn {
@@ -175,10 +173,11 @@
     gap: 12px;
     border-radius: 100px;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    color: white;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--text-primary);
     transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .google-btn:hover {

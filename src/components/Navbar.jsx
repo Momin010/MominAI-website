@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { Terminal, Menu, X, Play } from 'lucide-react';
@@ -8,6 +8,7 @@ import './Navbar.css';
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const mobileMenuRef = useRef(null);
     const { scrollY } = useScroll();
     const navigate = useNavigate();
 
@@ -15,18 +16,37 @@ const Navbar = () => {
         setIsScrolled(latest > 50);
     });
 
+    useEffect(() => {
+        if (isMobileMenuOpen) {
+            // Prevent scrolling when menu is open
+            document.body.style.overflow = 'hidden';
+        } else {
+            // Restore scrolling when menu is closed
+            document.body.style.overflow = '';
+        }
+        
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMobileMenuOpen]);
+
     const navLinks = [
         { name: 'Pitch Deck', href: '/pitch-deck' },
+        { name: 'Founders', href: '#founders' },
         { name: 'Specification', href: '/spec' },
         { name: 'Waitlist', href: '#waitlist' },
     ];
 
-    const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-    const closeMenu = () => setIsMobileMenuOpen(false);
+    const toggleMenu = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+    const closeMenu = () => {
+        setIsMobileMenuOpen(false);
+    };
 
     return (
         <motion.nav
-            className={`navbar ${isScrolled ? 'scrolled glass-panel' : ''}`}
+            className={`navbar ${isScrolled ? 'scrolled' : ''}`}
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -73,8 +93,14 @@ const Navbar = () => {
                 </div>
 
                 {/* Mobile Toggle */}
-                <div className="mobile-toggle" onClick={toggleMenu}>
-                    {isMobileMenuOpen ? <X size={24} color="white" /> : <Menu size={24} color="white" />}
+                <div 
+                    className="mobile-toggle" 
+                    onClick={toggleMenu}
+                    aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                    role="button"
+                    tabIndex={0}
+                >
+                    {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
                 </div>
             </div>
 
@@ -82,11 +108,15 @@ const Navbar = () => {
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <motion.div
+                        ref={mobileMenuRef}
                         className="mobile-menu"
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
+                        role="dialog"
+                        aria-modal="true"
+                        aria-labelledby="mobile-menu-title"
                     >
                         <div className="mobile-nav-links">
                             {navLinks.map((link) => {

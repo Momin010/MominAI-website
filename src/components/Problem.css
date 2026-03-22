@@ -1,53 +1,261 @@
 .problem-section {
-    padding: 120px 0;
+    padding: 140px 0;
     position: relative;
-    background: transparent;
 }
 
-.problem-visualization {
-    margin-top: 60px;
-    position: relative;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 24px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+.problem-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
 }
 
-.problems-image {
-    width: 100%;
-    height: auto;
+/* ── Left side ── */
+.problem-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+}
+
+.problem-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    text-align: left;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, var(--accent-pearl), var(--text-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.problem-lead {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 36px;
+}
+
+.problem-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.problem-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: #FFFFFF;
+    border: 1px solid rgba(0,0,0,0.07);
+    border-radius: 14px;
+    padding: 16px 18px;
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.problem-item:hover {
+    border-color: rgba(0, 127, 127, 0.3);
+    background: #f9fffe;
+    box-shadow: 0 4px 20px rgba(0,127,127,0.08);
+}
+
+.problem-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: rgba(0,163,163,0.15);
+    color: var(--accent-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.problem-item strong {
     display: block;
-    transition: transform 0.5s ease;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
 }
 
-.problem-visualization:hover .problems-image {
-    transform: scale(1.02);
+.problem-item p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
 }
 
-.card-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 120%;
-    height: 120%;
-    background: radial-gradient(circle, var(--accent-teal-dim), transparent 70%);
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: -1;
+/* ── Right: threat diagram ── */
+.problem-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (max-width: 768px) {
-    .problem-section {
-        padding: 80px 0;
+.threat-diagram {
+    width: 100%;
+    max-width: 440px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid rgba(255,80,80,0.2);
+    border-radius: 20px;
+    padding: 24px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 0 60px rgba(255,60,60,0.07), 0 20px 50px rgba(0,0,0,0.4);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.diagram-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,100,100,0.7);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.diagram-host {
+    border: 1px dashed rgba(255,80,80,0.25);
+    border-radius: 14px;
+    padding: 20px 16px;
+    background: rgba(255,40,40,0.03);
+}
+
+.diagram-host-label {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.35);
+    text-align: center;
+    margin-bottom: 16px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.diagram-agents-row {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.diagram-agent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,80,80,0.2);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    min-width: 80px;
+    text-align: center;
+}
+
+.agent-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.pulse-red {
+    background: #ff4444;
+    box-shadow: 0 0 0 0 rgba(255,68,68,0.6);
+    animation: pulseRed 1.6s infinite;
+}
+
+@keyframes pulseRed {
+    0%   { box-shadow: 0 0 0 0px rgba(255,68,68,0.6); }
+    70%  { box-shadow: 0 0 0 8px rgba(255,68,68,0); }
+    100% { box-shadow: 0 0 0 0px rgba(255,68,68,0); }
+}
+
+.agent-badge {
+    font-size: 0.6rem;
+    padding: 2px 7px;
+    border-radius: 99px;
+    font-weight: 600;
+}
+
+.agent-badge.bad {
+    background: rgba(255,60,60,0.15);
+    color: #ff7070;
+    border: 1px solid rgba(255,60,60,0.25);
+}
+
+.diagram-arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+    padding: 0 4px;
+}
+
+.arrow-line {
+    font-size: 0.7rem;
+    padding: 5px 10px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+.bad-arrow {
+    background: rgba(255,60,60,0.07);
+    color: rgba(255,110,110,0.8);
+    border: 1px solid rgba(255,60,60,0.15);
+}
+
+.diagram-resource {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.resource-chip {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+.diagram-footer-warn {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    color: rgba(255,100,100,0.7);
+    text-align: center;
+    border-top: 1px solid rgba(255,60,60,0.12);
+    padding-top: 14px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .problem-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
     }
-
-    .problem-visualization {
-        margin-top: 40px;
-        border-radius: 12px;
+    .problem-title {
+        text-align: center;
+    }
+    .problem-eyebrow {
+        text-align: center;
+    }
+    .problem-lead {
+        text-align: center;
+    }
+    .threat-diagram {
+        max-width: 100%;
     }
 }

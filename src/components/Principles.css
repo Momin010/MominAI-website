@@ -1,56 +1,171 @@
 .principles-section {
-    padding: 80px 20px;
-    /* Add horizontal padding */
-    display: flex;
-    justify-content: center;
+    padding: 140px 0;
+    position: relative;
 }
 
-.principles-visual-wrapper {
-    width: 100%;
-    max-width: 900px;
-    position: relative;
-    margin: 0 auto;
-}
-
-.principles-panel.glass-panel {
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.08) 0%,
-            rgba(255, 255, 255, 0.03) 100%);
-    backdrop-filter: blur(40px) saturate(200%);
-    -webkit-backdrop-filter: blur(40px) saturate(200%);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 40px;
-    padding: 60px;
-    position: relative;
-    overflow: hidden;
-    box-shadow:
-        0 40px 100px -20px rgba(0, 0, 0, 0.5),
-        inset 0 0 20px rgba(255, 255, 255, 0.05);
-    display: flex;
-    justify-content: center;
+.principles-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
     align-items: center;
 }
 
-.principles-main-img {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
+/* ─── Terminal ─── */
+.principles-terminal {
+    border-radius: 18px;
+    overflow: hidden;
+    background: #0d1117;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(0,0,0,0.05);
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+}
+
+.terminal-chrome {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.chrome-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.chrome-dot.red    { background: #ff5f57; }
+.chrome-dot.yellow { background: #febb2e; }
+.chrome-dot.green  { background: #28c840; }
+
+.chrome-title {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.28);
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.04em;
+}
+
+.terminal-body {
+    padding: 22px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    line-height: 1.7;
+}
+
+.code-line {
+    white-space: pre-wrap;
+}
+
+.code-comment { color: #6e7681; }
+.code-blank   { height: 8px; }
+.code-success { color: #3fb950; }
+.code-bracket { color: #e6edf3; }
+
+.code-keyword { color: #79c0ff; }
+.code-punct   { color: #e6edf3; }
+.code-indent  { display: inline-block; width: 16px; }
+.code-key     { color: #ff7b72; }
+.code-colon   { color: #e6edf3; }
+.code-val     { color: #a5d6ff; }
+
+.terminal-cursor {
+    width: 8px;
+    height: 16px;
+    background: var(--accent-teal);
+    display: inline-block;
+    border-radius: 2px;
+    margin-top: 6px;
+    animation: blink 1.1s step-end infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* ─── Right side text ─── */
+.principles-eyebrow {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-teal);
+    margin-bottom: 16px;
+    font-family: var(--font-mono);
+}
+
+.principles-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    text-align: left;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+}
+
+.principles-lead {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 32px;
+}
+
+.principles-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.principle-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+.principle-check {
+    color: var(--accent-teal);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.principle-item strong {
     display: block;
-    object-fit: contain;
-    mix-blend-mode: screen;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
 }
 
-.visual-glow-small {
-    display: none;
+.principle-item p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
 }
 
-@media (max-width: 768px) {
-    .principles-section {
-        padding: 40px 20px;
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+    .principles-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
     }
 
-    .principles-panel {
-        padding: 10px;
-        border-radius: 16px;
+    .principles-title {
+        text-align: center;
+    }
+
+    .principles-eyebrow {
+        text-align: center;
+    }
+
+    .principles-lead {
+        text-align: center;
+    }
+
+    .principles-section {
+        padding: 80px 0;
     }
 }
