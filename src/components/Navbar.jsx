@@ -12,8 +12,12 @@ const Navbar = () => {
     const { scrollY } = useScroll();
     const navigate = useNavigate();
 
+    const [isPastHero, setIsPastHero] = useState(false);
+
     useMotionValueEvent(scrollY, "change", (latest) => {
         setIsScrolled(latest > 50);
+        // Determine if we've scrolled past ~80% of the screen height (the hero section)
+        setIsPastHero(latest > (typeof window !== 'undefined' ? window.innerHeight * 0.8 : 800));
     });
 
     useEffect(() => {
@@ -45,64 +49,66 @@ const Navbar = () => {
     };
 
     return (
-        <motion.nav
-            className={`navbar ${isScrolled ? 'scrolled' : ''}`}
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-            <div className="container nav-container">
-                <Link to="/" className="logo" onClick={closeMenu}>
-                    <img src={logo} alt="MowisAI Logo" className="logo-image" />
-                </Link>
+        <>
+            <motion.nav
+                className={`navbar ${isScrolled ? 'scrolled' : ''} ${isPastHero ? 'past-hero' : ''}`}
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+                <div className="container nav-container">
+                    <Link to="/" className="logo" onClick={closeMenu}>
+                        <img src={logo} alt="MowisAI Logo" className="logo-image" />
+                    </Link>
 
-                {/* Desktop Links */}
-                <div className="nav-links desktop-only">
-                    {navLinks.map((link) => {
-                        if (link.href.startsWith('#')) {
+                    {/* Desktop Links */}
+                    <div className="nav-links desktop-only">
+                        {navLinks.map((link) => {
+                            if (link.href.startsWith('#')) {
+                                return (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        className="nav-link"
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            const el = document.querySelector(link.href);
+                                            if (el) {
+                                                el.scrollIntoView({ behavior: 'smooth' });
+                                            } else {
+                                                navigate('/' + link.href);
+                                            }
+                                            closeMenu();
+                                        }}
+                                    >
+                                        {link.name}
+                                    </a>
+                                );
+                            }
                             return (
-                                <a
-                                    key={link.name}
-                                    href={link.href}
-                                    className="nav-link"
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        const el = document.querySelector(link.href);
-                                        if (el) {
-                                            el.scrollIntoView({ behavior: 'smooth' });
-                                        } else {
-                                            navigate('/' + link.href);
-                                        }
-                                        closeMenu();
-                                    }}
-                                >
+                                <Link key={link.name} to={link.href} className="nav-link">
                                     {link.name}
-                                </a>
+                                </Link>
                             );
-                        }
-                        return (
-                            <Link key={link.name} to={link.href} className="nav-link">
-                                {link.name}
-                            </Link>
-                        );
-                    })}
-                </div>
+                        })}
+                    </div>
 
-                <div className="nav-actions desktop-only">
-                    <button onClick={() => navigate('/demo')} className="primary-btn"><Play size={16} /> Watch Demo</button>
-                </div>
+                    <div className="nav-actions desktop-only">
+                        <button onClick={() => navigate('/demo')} className="primary-btn"><Play size={16} /> Watch Demo</button>
+                    </div>
 
-                {/* Mobile Toggle */}
-                <div 
-                    className="mobile-toggle" 
-                    onClick={toggleMenu}
-                    aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-                    role="button"
-                    tabIndex={0}
-                >
-                    {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+                    {/* Mobile Toggle */}
+                    <div 
+                        className="mobile-toggle" 
+                        onClick={toggleMenu}
+                        aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                        role="button"
+                        tabIndex={0}
+                    >
+                        {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+                    </div>
                 </div>
-            </div>
+            </motion.nav>
 
             {/* Mobile Menu Overlay */}
             <AnimatePresence>
@@ -110,10 +116,10 @@ const Navbar = () => {
                     <motion.div
                         ref={mobileMenuRef}
                         className="mobile-menu"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
+                        initial={{ opacity: 0, scale: 0.96, y: -8 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        exit={{ opacity: 0, scale: 0.96, y: -8 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
                         role="dialog"
                         aria-modal="true"
                         aria-labelledby="mobile-menu-title"
@@ -152,7 +158,7 @@ const Navbar = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </motion.nav>
+        </>
     );
 };
 
