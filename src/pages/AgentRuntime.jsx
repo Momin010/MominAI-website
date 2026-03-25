@@ -6,22 +6,21 @@ import { useNavigate } from 'react-router-dom';
 import bgImage from '../assets/background.png';
 
 const initialNodes = [
-  { id: '1', position: { x: 400, y: 50 }, data: { label: 'User Request' }, style: { background: '#f8f6f0', color: '#111', border: 'none', borderRadius: '12px', padding: '15px', fontWeight: 'bold' } },
-  { id: '2', position: { x: 400, y: 150 }, data: { label: 'Understanding Engine' }, style: { background: '#00a3a3', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
-  { id: '3', position: { x: 200, y: 300 }, data: { label: 'Web Research' }, style: { background: '#5b8fff', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
-  { id: '4', position: { x: 400, y: 300 }, data: { label: 'Code Generation' }, style: { background: '#5b8fff', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
-  { id: '5', position: { x: 600, y: 300 }, data: { label: 'Data Analysis' }, style: { background: '#5b8fff', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
-  { id: '6', position: { x: 400, y: 450 }, data: { label: 'Safety Checker' }, style: { background: '#a78bfa', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
-  { id: '7', position: { x: 400, y: 600 }, data: { label: 'Action Performed' }, style: { background: '#34d399', color: '#111', border: 'none', borderRadius: '12px', padding: '15px', fontWeight: 'bold' } },
-  { id: '8', position: { x: 650, y: 450 }, data: { label: 'Activity Log' }, style: { background: '#f59e0b', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
+  { id: '1', position: { x: 400, y: 50 }, data: { label: 'Interactive Session' }, style: { background: '#f8f6f0', color: '#111', border: 'none', borderRadius: '12px', padding: '15px', fontWeight: 'bold' } },
+  { id: '2', position: { x: 400, y: 150 }, data: { label: 'Layer 1: Context Gatherer' }, style: { background: '#00a3a3', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
+  { id: '3', position: { x: 400, y: 250 }, data: { label: 'Layer 2: Architect (Blueprint)' }, style: { background: '#00a3a3', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
+  { id: '4', position: { x: 200, y: 350 }, data: { label: 'Layer 3: Sandbox Owners' }, style: { background: '#5b8fff', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
+  { id: '5', position: { x: 600, y: 350 }, data: { label: 'Layer 4: Sandbox Managers' }, style: { background: '#5b8fff', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
+  { id: '6', position: { x: 400, y: 450 }, data: { label: 'Layer 5: Workers (agentd)' }, style: { background: '#a78bfa', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
+  { id: '7', position: { x: 400, y: 600 }, data: { label: 'Patch-based Merge & Repair' }, style: { background: '#34d399', color: '#111', border: 'none', borderRadius: '12px', padding: '15px', fontWeight: 'bold' } },
+  { id: '8', position: { x: 650, y: 450 }, data: { label: 'OS Isolation (overlayfs/chroot)' }, style: { background: '#f59e0b', color: '#fff', border: 'none', borderRadius: '12px', padding: '15px' } },
 ];
 
 const initialEdges = [
   { id: 'e1-2', source: '1', target: '2', animated: true, style: { stroke: '#00e5e5', strokeWidth: 2 } },
   { id: 'e2-3', source: '2', target: '3', animated: true, style: { stroke: '#00e5e5' } },
-  { id: 'e2-4', source: '2', target: '4', animated: true, style: { stroke: '#00e5e5' } },
-  { id: 'e2-5', source: '2', target: '5', animated: true, style: { stroke: '#00e5e5' } },
-  { id: 'e3-6', source: '3', target: '6', style: { stroke: '#ffffff', opacity: 0.5 } },
+  { id: 'e3-4', source: '3', target: '4', animated: true, style: { stroke: '#00e5e5' } },
+  { id: 'e3-5', source: '3', target: '5', animated: true, style: { stroke: '#00e5e5' } },
   { id: 'e4-6', source: '4', target: '6', style: { stroke: '#ffffff', opacity: 0.5 } },
   { id: 'e5-6', source: '5', target: '6', style: { stroke: '#ffffff', opacity: 0.5 } },
   { id: 'e6-7', source: '6', target: '7', animated: true, style: { stroke: '#34d399', strokeWidth: 2 } },
@@ -47,7 +46,7 @@ const AgentRuntime = () => {
                 </button>
                 <h1 style={{ color: '#fff', marginBottom: '16px', fontSize: '2.5rem' }}>How Our Agent Thinks</h1>
                 <p style={{ color: 'rgba(255,255,255,0.7)', marginBottom: '40px', fontSize: '1.1rem', maxWidth: '750px', lineHeight: 1.6 }}>
-                    Curious about the magic behind the scenes? This interactive map shows exactly how Mowis AI processes your requests. It thinks, breaks down the steps, tests them for safety, and elegantly perfectly. Go ahead, drag the boxes around around!
+                    Curious about the magic behind the scenes? This interactive map illustrates our 5-Layer Orchestration workflow anchored natively by our Rust execution daemon, <strong>agentd</strong>. MowisAI uniquely isolates multi-agent execution entirely through OS-level chroot sandboxing and merges them asynchronously. Go ahead, drag the nodes to explore the architecture!
                 </p>
                 <div style={{ width: '100%', height: '580px', background: 'rgba(255,255,255,0.03)', borderRadius: '24px', border: '1px solid rgba(255, 255, 255, 0.1)', overflow: 'hidden', boxShadow: '0 40px 100px -20px rgba(0, 0, 0, 0.5)' }}>
                     <ReactFlow
